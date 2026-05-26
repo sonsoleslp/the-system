@@ -1,0 +1,10 @@
+-- CreateTable
+CREATE TABLE "Trial" (
+    "id" INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+    "status" TEXT NOT NULL,
+    "name" TEXT NOT NULL,
+    "virusId" INTEGER NOT NULL,
+    "createdAt" DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    "updatedAt" DATETIME NOT NULL,
+    CONSTRAINT "Trial_virusId_fkey" FOREIGN KEY ("virusId") REFERENCES "Virus" ("id") ON DELETE RESTRICT ON UPDATE CASCADE
+);
